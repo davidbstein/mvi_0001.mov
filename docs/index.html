@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>!!UNSAFE VIDEO FILE OPENED!!</title>
+    <style>
+      #container {
+        height: 100vh;
+        height: 100dvh;
+        background: red;
+        margin: 0;
+        border: 0;
+        padding: 1em;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-content: center;
+      }
+      body {
+        border: 0;
+        padding: 0;
+        margin: 0;
+      }
+      #warning {
+        max-width: 36em;
+        background: white;
+        border: 4px solid black;
+        padding: 1em;
+        height: fit-content;
+      }
+      h1 {
+        border-bottom: 4px solid black;
+        font-size: 3em;
+        padding: 0;
+        margin: 0;
+      }
+      p {
+        font-size: 2em;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="warning">
+        <h1>
+          This is a website, not a video!
+        </h1>
+        <p>
+          The default names for many files are now valid web addresses. Your <span id='browser-name'>browsser</span> went to this website instead of opening a file. I've tried to put this warning as many places as I can, but please double-check before opening other files, espeically with <tt>.zip</tt> and <tt>.mov</tt> files.
+        </p>
+      </div>
+    </div>
+    <script>
+      (function () {
+        const browsername = "your browser";
+        if ((!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0)
+          browsername = "opera";
+        if ( typeof InstallTrigger !== 'undefined' )
+          browsername = "firefox";
+        if ( /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && window['safari'].pushNotification)) )
+          browsername = "safari";
+        if ( /*@cc_on!@*/false || !!document.documentMode )
+          browsername = "internet explorer";
+        if ( !isIE && !!window.StyleMedia )
+          browsername = "edge";
+        if ( !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime) )
+          browsername = "chrome";
+        if ( isChrome && (navigator.userAgent.indexOf("Edg") != -1) )
+          browsername = "chromium";
+        document.querySelector("#browser-name").innerHTML = browsername;
+      }))();
+    </script>
+  </body>
+</html>
